@@ -1,0 +1,272 @@
+body {
+    font-family: Tahoma, sans-serif;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    border: none;
+    align-content: center;
+    color: rgb(0, 0, 0);
+    text-align: right;
+    text-decoration: none;
+    font-size: 4vw;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    button {
+        font-size: 2vw;
+    }
+}
+
+p {
+    font-size: 3vw;
+}
+
+h1 {
+    font-style: normal;
+    font-size: 6vw;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 4vw;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 4vw;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    p
+    {
+        font-size: 1vw;
+    }
+
+    h1
+    {
+        font-size: 2vw;
+    }
+
+    h2
+    {
+        font-size: 1.2vw;
+    }
+
+    h3 {
+        font-size: 1.6vw;
+    }
+}
+
+.Links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    grid-column-start: 1;
+    padding-left: 20%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .Links{
+        grid-column-start: 2;
+    }
+}
+
+button:hover {
+    color: orange;
+    font-style: italic;
+  }
+
+.container{
+    display: grid;
+    grid-template-columns: 80%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .container{
+        display: grid;
+        grid-template-columns: 20% 70% 10%;
+    }
+}
+
+.block{
+    padding-left: 5%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.slot{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 2vw;
+    border-color: black;
+    border-bottom: 4px solid black;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .slot{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        border-color: black;
+        border-bottom: 4px solid black;
+    }
+}
+
+.blockwork{
+    display: none;
+}
+
+.blockshader{
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(256px,1fr));
+    column-gap: 3%;
+    row-gap: 10vw;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 10%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .blockshader 
+    {
+        grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+        padding-left: 9%;
+        row-gap: 3vw;
+        padding-bottom: 10%;
+    }
+}
+
+.Logo{
+    width: 100%;
+    padding-left: 20%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .Logo{
+        width: 120%;
+        padding-left: 40%;
+    }
+}
+
+.blockabout{
+    display: grid;
+    grid-template-columns: 100%;
+    padding-left: 10%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .blockabout 
+    {
+        grid-template-columns: 40% 60%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+.nav{
+    padding-bottom: 0%;
+    align-self: end;
+    justify-self: right;
+    width: 80%;
+    grid-column: 1;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .nav 
+    {
+        padding-bottom: 0%;
+        align-self: end;
+        justify-self: end;
+        width: 60%;
+        grid-column: 2;
+    }
+}
+
+.images{
+    grid-column-start: 1;
+    column-gap: 1%;
+    row-gap: 3%;
+    display: none;
+    grid-template-columns: 1fr;
+    margin-bottom: 16%;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .images{
+        grid-column-start: span 2;
+        column-gap: 1%;
+        row-gap: 3%;
+        display: none;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+.item{
+    min-height: 256px;
+}
+
+.gif{
+    place-self: center;
+    background-color: rgba(0, 0, 0, 0.137);
+    display: inherit;
+    padding-top: 5%;
+    width: 80%;
+    border-radius: 10%;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+}
+
+@media only screen and (min-width: 768px) 
+{
+    .gif{
+        place-self: center;
+        background-color: rgba(0, 0, 0, 0.137);
+        display: inherit;
+        padding-top: 5%;
+        height: 100%;
+        width: 100%;
+        border-radius: 10%;
+        place-items: center;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    
+  }
+  
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: orange;
+    background-color: transparent;
+    font-style: italic;
+
+  }
+  
+  a:active {
+    color: orange;
+    background-color: transparent;
+    font-style: italic;
+  }

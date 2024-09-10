@@ -1,0 +1,22 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana;
+}
+
+.mainGrid{
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 1fr 10%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  ". header header header ."
+  ". one two three ."  
+}
+
+.object{
+  justify-self: center;
+}
