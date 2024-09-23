@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +9,16 @@
   <meta name="twitter:title" content="Max Myers Portfolio">
   <title>Portfolio: Max</title>
   <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="text/javascript">
+    function onLoad(){
+    var page = sessionStorage.getItem('currentPage');
+    if(page == null){
+        page = 'about';
+    }
+    display(page);
+    }
+    window.onload = onLoad;
+    </script>
 </head>
 
 <body>
@@ -36,9 +44,6 @@
             <button onclick="display('shaders')">
                 <h3 style="display:inline; padding-left: 1%; justify-self: end;">Examples</h3>
             </button>
-
-            
-            
         </div>
         
         <div class="block blockwork" id="work">
@@ -47,7 +52,7 @@
                     <img src="SeetheScab/SS2.png" alt="Max Myers" style="width: 100%; border-radius: 1%; place-self: center;">
                 </div>
                 
-                <div class="item">
+                <div class="item" >
                     <a href="https://mjm.itch.io/seethe-and-scab" target="_blank" rel="noopener noreferrer">
                         <h1>Seethe and Scab</h1>
                     </a>
@@ -71,6 +76,9 @@
 
                 <div class="images" id="block1">
                     <img src="SeetheScab/SS1.png" alt="Max Myers" style="width: 100%; place-self: center;">
+                    <p style="grid-column-start: span 2;">
+                        Explain Code here
+                    </p>
                     <img src="SeetheScab/SS3.png" alt="Max Myers" style="width: 100%; place-self: center;">
                     <img src="SeetheScab/Outside.png" alt="Max Myers" style="width: 100%; place-self: center;">
                 </div>
@@ -103,7 +111,7 @@
                     <button onclick="expand('block2')" style="justify-self: left;">Expand</button>                
                 </div>
                 
-                <div class="images" id="block2" style="padding-bottom: 1%;">
+                <div class="images" id="block2" style="padding-bottom: 0%;">
                     <img src="SOTO/L9hRD3.png" alt="Max Myers" style="width: 100%;">
                     <img src="SOTO/d7Duwk.png" alt="Max Myers" style="width: 100%;">
                     <img src="SOTO/W3zcAz.png" alt="Max Myers" style="width: 100%;">
@@ -282,84 +290,75 @@
             </div>            
         </div>
         
+        <div id="overlay" class="overlay">
+            <div style="top:45%; left:30%; transform: translate(-25%, -25%); position: relative;">
+                <iframe id="youtube" style="border: 0; width: 90%; height: 50%;"
+                src="">
+                </iframe>
+            </div>            
+            <div class="scroll">
+                <div class="scrollinteral">
+                    <span id="explain" style="white-space: pre-line; font-size: 1.1vw;">
+                        
+                    </span>
+                </div>
+            </div>
+            <button onclick="overlay(0)" style="position: absolute; bottom: 0%; width: 20%; left: 40%; text-align: center; border-radius: 2% / 20%; background-color: rgba(255, 255, 255, 0.514);">close</button>
+        </div>
+
         <div class="block blockshader" id="shaders">
-            
-            <div class="gif">
-                <img src="Gifs/tomslic.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
+
+            <div class="gif" onclick="overlay(0)">
+                <img src="Gifs/GrassPaint.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
-                    Realtime mesh slicing and 3D signed distance feild texturing for vegetable internals.
+                    Compute Shader grass renderer.
                 </p>
             </div>
 
-            <div class="gif">
+            <div class="gif" onclick="overlay(1)">
+                <img src="Gifs/RSZ-Gif.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
+                <p style= "height: 60%; width: 80%;">
+                    Ben Day dots post processing effect. Converts to CMYK to make sure that back colour is white.
+                </p>
+            </div>
+            <div class="gif" onclick="overlay(2)">
                 <img src="Gifs/PaintingEffect.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
                     Realtime paint effect. Using procedural mesh placement and compute shaders.
                 </p>
             </div>
-
-            <div class="gif">
-                <img src="Gifs/mush.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
-                <div style="height: 100%; width: 80%;">
-                    <p style= "display: inline;">
-                        An experiment in using vertex colour to refrence model subsets. <br>
-                        <a href="https://twitter.com/ApparentRaisin/status/1523699933538578433?s=20" target="_blank" rel="noopener noreferrer" style="display: inline;">
-                            Detailed explanation here
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
             
-            <div class="gif">
-                <img src="Gifs/monoke-2.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
+            <div class="gif" onclick="overlay(3)">
+                <img src="Gifs/tomslic.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
-                    Effect inspired by the deer god in Princess Monoke. Makes use of texture animation, and vertex displacement for position.
+                    Realtime mesh slicing and 3D signed distance field texturing for vegetable internals.
                 </p>
             </div>
 
-            <div class="gif">
-                <img src="Gifs/StaticWater.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
-                <p style= "height: 60%; width: 80%;">
-                    Mirrored distortion between the reflection, and the object.
-                </p>
-            </div>
-
-            <div class="gif">
+            <div class="gif" onclick="overlay(4)">
                 <img src="Gifs/burg2.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
                     A custom stylised lighting model. Supported various specular and shadow falloffs for different types of material.
                 </p>
             </div>
 
-            <div class="gif">
-                <img src="Gifs/PaintTree.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
+            <div class="gifnolink">
+                <img src="Gifs/monoke-2.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
-                    Implimentation of billboarded cube faces to create "fluffy" bushes.
+                    Effect inspired by the deer god in Princess Monoke. Makes use of texture animation, and vertex displacement for position.
                 </p>
             </div>
 
-            <div class="gif">
-                <img src="Gifs/ImposterLOD.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
-                <p style= "height: 60%; width: 80%;">
-                    A implimentation of Imposter based LOD in Unity.
-                </p>
-            </div>
-
-            <div class="gif">
+            <div class="gifnolink">
                 <img src="Gifs/Rope.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
                 <p style= "height: 60%; width: 80%;">
                     2D verlet rope implimentation.
                 </p>
             </div>
 
-            <div class="gif">
-                <img src="Gifs/run.gif" alt="Max Myers" style="width: 80%; border-radius: 10%;">
-                <p style= "height: 60%; width: 80%;">
-                    An experiment in compositing different rendering styles together to recreate tradtional cell animation style.
-                </p>
-            </div>
+            
+
+            
 
         </div>
 
